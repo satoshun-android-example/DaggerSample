@@ -24,6 +24,7 @@ class MainActivity : DaggerAppCompatActivity(),
     binding = DataBindingUtil.setContentView(this, R.layout.main_act)
     setSupportActionBar(binding.toolbar)
 
+
     binding.fab.setOnClickListener { startActivity(Intent(this@MainActivity, SubActivity::class.java)) }
     binding.content.edit.setOnClickListener { presenter.doTask() }
 
