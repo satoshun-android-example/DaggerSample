@@ -37,7 +37,7 @@ android {
 }
 
 dependencies {
-  implementation project(':presenter')
+  implementation project(':autofactory-presenter')
 
   implementation Libs.kotlin
 

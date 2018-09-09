@@ -1,2 +1,2 @@
-include ':presenter'
-include ':app'
+include ':autofactory-presenter'
+include ':autofactory'
