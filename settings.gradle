@@ -1,2 +1,4 @@
 include ':autofactory-presenter'
 include ':autofactory'
+
+include ':assistedinject'
