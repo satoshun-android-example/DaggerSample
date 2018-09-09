@@ -1,6 +1,7 @@
 package com.github.satoshun.example.dagger.android.contribute.main
 
 import com.github.satoshun.example.dagger.android.contribute.FragmentScope
+import com.github.satoshun.example.dagger.android.contribute.main.domain.MainContract
 import dagger.Module
 import dagger.Provides
 import dagger.android.ContributesAndroidInjector

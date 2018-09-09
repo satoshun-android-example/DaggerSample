@@ -8,14 +8,17 @@ import android.widget.TextView
 import android.widget.Toast
 import com.github.satoshun.example.dagger.android.contribute.R
 import com.github.satoshun.example.dagger.android.contribute.databinding.MainActBinding
+import com.github.satoshun.example.dagger.android.contribute.main.domain.MainContract
+import com.github.satoshun.example.dagger.android.contribute.main.impl.MainWrapperFactory
 import com.github.satoshun.example.dagger.android.contribute.sub.SubActivity
 import dagger.android.support.DaggerAppCompatActivity
 import javax.inject.Inject
 
 class MainActivity : DaggerAppCompatActivity(),
-  MainContract.View {
+    MainContract.View {
   @Inject lateinit var presenter: MainPresenter
   @Inject lateinit var message: String
+  @Inject lateinit var factory: MainWrapperFactory
 
   private lateinit var binding: MainActBinding
 
@@ -24,9 +27,12 @@ class MainActivity : DaggerAppCompatActivity(),
     binding = DataBindingUtil.setContentView(this, R.layout.main_act)
     setSupportActionBar(binding.toolbar)
 
-
-    binding.fab.setOnClickListener { startActivity(Intent(this@MainActivity, SubActivity::class.java)) }
-    binding.content.edit.setOnClickListener { presenter.doTask() }
+    binding.fab.setOnClickListener {
+      startActivity(Intent(this@MainActivity, SubActivity::class.java))
+    }
+    binding.content.edit.setOnClickListener {
+      presenter.doTask()
+    }
 
     if (supportFragmentManager.findFragmentByTag("retain") == null) {
       supportFragmentManager.beginTransaction()

@@ -1,5 +1,6 @@
 package com.github.satoshun.example.dagger.android.contribute.main
 
+import com.github.satoshun.example.dagger.android.contribute.main.domain.MainContract
 import java.util.Random
 
 import javax.inject.Inject

@@ -1,32 +1,20 @@
-apply plugin: 'com.android.application'
+apply plugin: 'com.android.library'
 apply plugin: 'kotlin-android'
-apply plugin: 'kotlin-android-extensions'
 apply plugin: 'kotlin-kapt'
 
 android {
   compileSdkVersion 28
 
   defaultConfig {
-    applicationId "com.github.satoshun.example.dagger.android.contribute"
     minSdkVersion 21
     targetSdkVersion 28
     versionCode 1
     versionName "1.0"
-    multiDexEnabled true
 
     testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
   }
 
   android.defaultConfig.javaCompileOptions.annotationProcessorOptions.includeCompileClasspath = true
-
-  packagingOptions {
-    exclude 'plugin.xml'
-    exclude 'META-INF/eclipse.inf'
-    exclude 'about_files/LICENSE-2.0.txt'
-    exclude 'plugin.properties'
-  }
-
-  dataBinding.enabled = true
 
   buildTypes {
     release {
@@ -37,17 +25,9 @@ android {
 }
 
 dependencies {
-  implementation project(':presenter')
-
   implementation Libs.kotlin
 
   implementation 'com.android.support:appcompat-v7:28.0.0-rc02'
-  implementation 'com.android.support.constraint:constraint-layout:1.1.3'
-  implementation 'com.android.support:design:28.0.0-rc02'
-
-  implementation 'com.android.support:multidex:1.0.3'
-
-  implementation 'com.squareup.okhttp3:okhttp:3.11.0'
 
   compileOnly 'org.glassfish:javax.annotation:10.0-b28'
   implementation 'com.google.auto.factory:auto-factory:1.0-beta5'
@@ -58,4 +38,9 @@ dependencies {
   implementation 'com.google.dagger:dagger-android:2.17'
   kapt 'com.google.dagger:dagger-android-processor:2.17'
   implementation 'com.google.dagger:dagger-android-support:2.17'
+
+  testImplementation 'junit:junit:4.12'
+
+  androidTestImplementation 'com.android.support.test:runner:1.0.2'
+  androidTestImplementation 'com.android.support.test.espresso:espresso-core:3.0.2'
 }
