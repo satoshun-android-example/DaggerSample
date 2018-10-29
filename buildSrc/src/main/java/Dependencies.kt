@@ -44,6 +44,13 @@ object Libs {
   val groupie = "com.xwray:groupie:2.1.0"
   val groupie_databinding = "com.xwray:groupie-databinding:2.1.0"
 
+  private const val daggerVer = "2.19"
+  val dagger = "com.google.dagger:dagger:$daggerVer"
+  val dagger_compiler = "com.google.dagger:dagger-compiler:$daggerVer"
+  val dagger_android = "com.google.dagger:dagger-android:$daggerVer"
+  val dagger_android_processor = "com.google.dagger:dagger-android-processor:$daggerVer"
+  val dagger_android_support = "com.google.dagger:dagger-android-support:$daggerVer"
+
   val junit = "junit:junit:4.12"
   val truth = "com.google.truth:truth:0.39"
   val mockito_kotlin = "com.nhaarman:mockito-kotlin-kt1.1:1.5.0"
