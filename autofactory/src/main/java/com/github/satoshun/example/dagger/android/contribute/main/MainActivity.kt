@@ -1,11 +1,11 @@
 package com.github.satoshun.example.dagger.android.contribute.main
 
 import android.content.Intent
-import android.databinding.DataBindingUtil
 import android.os.Bundle
 import android.view.Menu
 import android.widget.TextView
 import android.widget.Toast
+import androidx.databinding.DataBindingUtil
 import com.github.satoshun.example.dagger.android.contribute.R
 import com.github.satoshun.example.dagger.android.contribute.databinding.MainActBinding
 import com.github.satoshun.example.dagger.android.contribute.main.domain.MainContract

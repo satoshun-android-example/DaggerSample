@@ -1,16 +1,13 @@
 package com.github.satoshun.example.dagger.android.contribute.sub;
 
 import android.os.Bundle;
-import android.support.annotation.Nullable;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-
 import com.github.satoshun.example.dagger.android.contribute.databinding.FragmentSubBinding;
+import dagger.android.support.DaggerFragment;
 
 import javax.inject.Inject;
-
-import dagger.android.support.DaggerFragment;
 
 public class SubActivityFragment extends DaggerFragment implements SubActivityContract.View {
 
@@ -33,7 +30,7 @@ public class SubActivityFragment extends DaggerFragment implements SubActivityCo
     return binding.getRoot();
   }
 
-  @Override public void onViewCreated(View view, @Nullable Bundle savedInstanceState) {
+  @Override public void onViewCreated(View view, Bundle savedInstanceState) {
     super.onViewCreated(view, savedInstanceState);
   }
 }

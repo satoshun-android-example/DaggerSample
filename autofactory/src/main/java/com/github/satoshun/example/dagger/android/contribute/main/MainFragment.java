@@ -1,11 +1,9 @@
 package com.github.satoshun.example.dagger.android.contribute.main;
 
 import android.os.Bundle;
-import android.support.annotation.Nullable;
+import dagger.android.support.DaggerFragment;
 
 import javax.inject.Inject;
-
-import dagger.android.support.DaggerFragment;
 
 public class MainFragment extends DaggerFragment {
 
@@ -13,7 +11,7 @@ public class MainFragment extends DaggerFragment {
   @Inject int tax; // from Activity Component
   @Inject float weight; // from Fragment Component
 
-  @Override public void onCreate(@Nullable Bundle savedInstanceState) {
+  @Override public void onCreate(Bundle savedInstanceState) {
     super.onCreate(savedInstanceState);
     setRetainInstance(true);
   }

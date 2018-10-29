@@ -1,8 +1,8 @@
 package com.github.satoshun.example.dagger.android.contribute.sub
 
 import android.os.Bundle
-import android.support.v7.widget.Toolbar
 import android.view.View
+import androidx.appcompat.widget.Toolbar
 import com.github.satoshun.example.dagger.android.contribute.R
 import dagger.android.support.DaggerAppCompatActivity
 import javax.inject.Inject

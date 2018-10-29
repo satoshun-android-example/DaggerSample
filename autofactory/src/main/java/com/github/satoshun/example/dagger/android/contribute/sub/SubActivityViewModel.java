@@ -1,8 +1,8 @@
 package com.github.satoshun.example.dagger.android.contribute.sub;
 
-import android.databinding.Observable;
-import android.databinding.ObservableField;
 import android.text.TextUtils;
+import androidx.databinding.Observable;
+import androidx.databinding.ObservableField;
 
 import javax.inject.Inject;
 

@@ -6,6 +6,8 @@ buildscript {
   dependencies {
     classpath Libs.android_plugin
     classpath Libs.kotlin_plugin
+
+    classpath 'com.android.tools.build.jetifier:jetifier-processor:1.0.0-beta02'
   }
 }
 
