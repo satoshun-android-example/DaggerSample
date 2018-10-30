@@ -1,7 +1,7 @@
 package com.github.satoshun.example.dagger.assistedinject
 
 import android.os.Bundle
-import android.support.v7.app.AppCompatActivity
+import androidx.appcompat.app.AppCompatActivity
 import com.squareup.inject.assisted.Assisted
 import com.squareup.inject.assisted.AssistedInject
 import com.squareup.inject.assisted.dagger2.AssistedModule
