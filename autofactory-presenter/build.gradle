@@ -2,6 +2,8 @@ apply plugin: 'com.android.library'
 apply plugin: 'kotlin-android'
 apply plugin: 'kotlin-kapt'
 
+apply from: "${rootDir}/jetifier_shared.gradle"
+
 android {
   compileSdkVersion 28
 

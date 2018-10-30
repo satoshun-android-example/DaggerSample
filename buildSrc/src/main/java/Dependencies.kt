@@ -12,6 +12,7 @@ object Libs {
   val android_plugin = "com.android.tools.build:gradle:3.2.1"
   val kotlin_plugin = "org.jetbrains.kotlin:kotlin-gradle-plugin:${Vers.kotlin}"
   val dokka_plugin = "org.jetbrains.dokka:dokka-android-gradle-plugin:0.9.16"
+  val jetifier_plugin = "com.android.tools.build.jetifier:jetifier-processor:1.0.0-beta02"
   val versions_plugin = "com.github.ben-manes:gradle-versions-plugin:0.20.0"
 
   val kotlin = "org.jetbrains.kotlin:kotlin-stdlib:${Vers.kotlin}"
