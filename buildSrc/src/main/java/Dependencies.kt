@@ -24,14 +24,9 @@ object Libs {
   val motif = "com.uber.motif:motif:0.0.7"
   val motif_compiler = "com.uber.motif:motif-compiler:0.0.7"
 
-  val appcompat = "androidx.appcompat:appcompat:1.0.0-rc01"
-  val recyclerview = "androidx.recyclerview:recyclerview:1.0.0-rc01"
+  val appcompat = "androidx.appcompat:appcompat:1.0.0"
+  val recyclerview = "androidx.recyclerview:recyclerview:1.0.0"
   val constraintlayout = "androidx.constraintlayout:constraintlayout:2.0.0-alpha2"
-  val cardview = "androidx.cardview:cardview:1.0.0-rc01"
-
-  val contentpager = "androidx.contentpager:contentpager:1.0.0-rc01"
-  val webkit = "androidx.webkit:webkit:1.0.0-rc01"
-  val media2 = "androidx.media2:media2:1.0.0-alpha02"
 
   val material = "com.google.android.material:material:1.0.0"
 
