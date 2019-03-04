@@ -1,14 +1,16 @@
+import static dependencies.DependenciesKt.*
+
 buildscript {
   repositories {
     google()
     jcenter()
   }
   dependencies {
-    classpath Libs.android_plugin
-    classpath Libs.kotlin_plugin
+    classpath ANDROID_PLUGIN
+    classpath KOTLIN_PLUGIN
 
     // Jetifier has bug so explicitly specify version
-    classpath Libs.jetifier_plugin
+    classpath JETIFIER_PLUGIN
   }
 }
 

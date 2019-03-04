@@ -1,3 +1,5 @@
+import static dependencies.DependenciesKt.*
+
 apply plugin: 'com.android.application'
 apply plugin: 'kotlin-android'
 apply plugin: 'kotlin-android-extensions'
@@ -25,18 +27,18 @@ android {
 }
 
 dependencies {
-  implementation Libs.kotlin
+  implementation KOTLIN
 
-  implementation Libs.appcompat
-  implementation Libs.constraintlayout
-  implementation Libs.material
+  implementation APPCOMPAT
+  implementation CONSTRAINTLAYOUT
+  implementation MATERIAL
 
   compileOnly 'com.squareup.inject:assisted-inject-annotations-dagger2:0.3.0'
   kapt 'com.squareup.inject:assisted-inject-processor-dagger2:0.3.0'
 
-  implementation Libs.dagger
-  kapt Libs.dagger_compiler
-  implementation Libs.dagger_android
-  kapt Libs.dagger_android_processor
-  implementation Libs.dagger_android_support
+  implementation DAGGER
+  kapt DAGGER_COMPILER
+  implementation DAGGER_ANDROID
+  kapt DAGGER_ANDROID_PROCESSOR
+  implementation DAGGER_ANDROID_SUPPORT
 }

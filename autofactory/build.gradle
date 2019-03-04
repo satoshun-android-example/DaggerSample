@@ -1,3 +1,5 @@
+import static dependencies.DependenciesKt.*
+
 apply plugin: 'com.android.application'
 apply plugin: 'kotlin-android'
 apply plugin: 'kotlin-android-extensions'
@@ -39,11 +41,11 @@ android {
 dependencies {
   implementation project(':autofactory-presenter')
 
-  implementation Libs.kotlin
+  implementation KOTLIN
 
-  implementation Libs.appcompat
-  implementation Libs.constraintlayout
-  implementation Libs.material
+  implementation APPCOMPAT
+  implementation CONSTRAINTLAYOUT
+  implementation MATERIAL
 
   implementation 'com.squareup.okhttp3:okhttp:3.11.0'
 
@@ -51,9 +53,9 @@ dependencies {
   implementation 'com.google.auto.factory:auto-factory:1.0-beta5'
   kapt 'com.google.auto.factory:auto-factory:1.0-beta5'
 
-  implementation Libs.dagger
-  kapt Libs.dagger_compiler
-  implementation Libs.dagger_android
-  kapt Libs.dagger_android_processor
-  implementation Libs.dagger_android_support
+  implementation DAGGER
+  kapt DAGGER_COMPILER
+  implementation DAGGER_ANDROID
+  kapt DAGGER_ANDROID_PROCESSOR
+  implementation DAGGER_ANDROID_SUPPORT
 }

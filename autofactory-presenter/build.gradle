@@ -1,3 +1,5 @@
+import static dependencies.DependenciesKt.*
+
 apply plugin: 'com.android.library'
 apply plugin: 'kotlin-android'
 apply plugin: 'kotlin-kapt'
@@ -18,15 +20,15 @@ android {
 }
 
 dependencies {
-  implementation Libs.kotlin
+  implementation KOTLIN
 
   compileOnly 'org.glassfish:javax.annotation:10.0-b28'
   implementation 'com.google.auto.factory:auto-factory:1.0-beta5'
   kapt 'com.google.auto.factory:auto-factory:1.0-beta5'
 
-  implementation Libs.dagger
-  kapt Libs.dagger_compiler
-  implementation Libs.dagger_android
-  kapt Libs.dagger_android_processor
-  implementation Libs.dagger_android_support
+  implementation DAGGER
+  kapt DAGGER_COMPILER
+  implementation DAGGER_ANDROID
+  kapt DAGGER_ANDROID_PROCESSOR
+  implementation DAGGER_ANDROID_SUPPORT
 }
