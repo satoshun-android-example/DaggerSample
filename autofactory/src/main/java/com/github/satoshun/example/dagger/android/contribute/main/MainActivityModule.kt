@@ -19,8 +19,12 @@ class MainActivityModule {
     return presenter
   }
 
-  @Provides fun provideMainContractView(activity: MainActivity): MainContract.View {
-    return activity
+//  @Provides fun provideMainContractView(activity: MainActivity): MainContract.View {
+//    return activity
+//  }
+
+  @Provides fun MainActivity.provideMainContractView(): MainContract.View {
+    return this
   }
 
   @Provides fun provideTax(): Int {

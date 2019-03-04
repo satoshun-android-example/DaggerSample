@@ -1,15 +1,15 @@
 object Vers {
-  val compile_sdk = 28
-  val min_sdk = 21
-  val target_sdk = 28
+  const val compile_sdk = 28
+  const val min_sdk = 21
+  const val target_sdk = 28
 
-  val kotlin = "1.3.0"
-  val couroutine = "1.0.0"
-  val ktlint = "0.24.0"
+  const val kotlin = "1.3.21"
+  const val couroutine = "1.0.0"
+  const val ktlint = "0.24.0"
 }
 
 object Libs {
-  val android_plugin = "com.android.tools.build:gradle:3.2.1"
+  val android_plugin = "com.android.tools.build:gradle:3.3.1"
   val kotlin_plugin = "org.jetbrains.kotlin:kotlin-gradle-plugin:${Vers.kotlin}"
   val dokka_plugin = "org.jetbrains.dokka:dokka-android-gradle-plugin:0.9.16"
   val jetifier_plugin = "com.android.tools.build.jetifier:jetifier-processor:1.0.0-beta02"

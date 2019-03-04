@@ -15,7 +15,8 @@ import dagger.android.support.DaggerAppCompatActivity
 import javax.inject.Inject
 
 class MainActivity : DaggerAppCompatActivity(),
-    MainContract.View {
+  MainContract.View {
+
   @Inject lateinit var presenter: MainPresenter
   @Inject lateinit var message: String
   @Inject lateinit var factory: MainWrapperFactory
@@ -36,8 +37,8 @@ class MainActivity : DaggerAppCompatActivity(),
 
     if (supportFragmentManager.findFragmentByTag("retain") == null) {
       supportFragmentManager.beginTransaction()
-          .add(MainFragment(), "retain")
-          .commit()
+        .add(MainFragment(), "retain")
+        .commit()
     }
   }
 
