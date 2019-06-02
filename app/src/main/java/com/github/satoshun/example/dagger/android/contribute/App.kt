@@ -1,10 +1,17 @@
 package com.github.satoshun.example.dagger.android.contribute
 
+import android.app.Application
 import dagger.android.AndroidInjector
-import dagger.android.support.DaggerApplication
+import dagger.android.DispatchingAndroidInjector
+import dagger.android.HasAndroidInjector
+import javax.inject.Inject
 
-class App : DaggerApplication() {
-  override fun applicationInjector(): AndroidInjector<out DaggerApplication> {
-    return DaggerAppComponent.builder().create(this)
+class App : Application(),
+  HasAndroidInjector {
+  @Inject lateinit var androidInjector: DispatchingAndroidInjector<Any>
+
+  override fun androidInjector(): AndroidInjector<Any> {
+    DaggerAppComponent.builder().create(this).inject(this)
+    return androidInjector
   }
 }
