@@ -39,8 +39,6 @@ android {
 }
 
 dependencies {
-  implementation project(':autofactory-presenter')
-
   implementation KOTLIN
 
   implementation APPCOMPAT
@@ -48,10 +46,6 @@ dependencies {
   implementation MATERIAL
 
   implementation 'com.squareup.okhttp3:okhttp:3.11.0'
-
-  compileOnly 'org.glassfish:javax.annotation:10.0-b28'
-  implementation 'com.google.auto.factory:auto-factory:1.0-beta5'
-  kapt 'com.google.auto.factory:auto-factory:1.0-beta5'
 
   implementation DAGGER
   kapt DAGGER_COMPILER
