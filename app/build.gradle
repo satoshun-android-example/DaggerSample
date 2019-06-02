@@ -1,0 +1,61 @@
+import static dependencies.DependenciesKt.*
+
+apply plugin: 'com.android.application'
+apply plugin: 'kotlin-android'
+apply plugin: 'kotlin-android-extensions'
+apply plugin: 'kotlin-kapt'
+
+apply from: "${rootDir}/jetifier_shared.gradle"
+
+android {
+  compileSdkVersion 28
+
+  defaultConfig {
+    applicationId "com.github.satoshun.example.dagger.android.contribute"
+    minSdkVersion 21
+    targetSdkVersion 28
+    versionCode 1
+    versionName "1.0"
+    multiDexEnabled true
+  }
+
+  android.defaultConfig.javaCompileOptions.annotationProcessorOptions.includeCompileClasspath = true
+
+  packagingOptions {
+    exclude 'plugin.xml'
+    exclude 'META-INF/eclipse.inf'
+    exclude 'about_files/LICENSE-2.0.txt'
+    exclude 'plugin.properties'
+  }
+
+  dataBinding.enabled = true
+
+  buildTypes {
+    release {
+      minifyEnabled false
+      proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+    }
+  }
+}
+
+dependencies {
+  implementation project(':autofactory-presenter')
+
+  implementation KOTLIN
+
+  implementation APPCOMPAT
+  implementation CONSTRAINTLAYOUT
+  implementation MATERIAL
+
+  implementation 'com.squareup.okhttp3:okhttp:3.11.0'
+
+  compileOnly 'org.glassfish:javax.annotation:10.0-b28'
+  implementation 'com.google.auto.factory:auto-factory:1.0-beta5'
+  kapt 'com.google.auto.factory:auto-factory:1.0-beta5'
+
+  implementation DAGGER
+  kapt DAGGER_COMPILER
+  implementation DAGGER_ANDROID
+  kapt DAGGER_ANDROID_PROCESSOR
+  implementation DAGGER_ANDROID_SUPPORT
+}

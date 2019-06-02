@@ -1,3 +1,5 @@
+include ':app'
+
 include ':autofactory-presenter'
 include ':autofactory'
 
