@@ -1,14 +1,14 @@
 package com.github.satoshun.example.dagger.android.contribute
 
 import com.github.satoshun.example.dagger.android.contribute.main.MainActivityModule
+import dagger.android.AndroidInjectionModule
 import dagger.android.AndroidInjector
-import dagger.android.support.AndroidSupportInjectionModule
 import javax.inject.Singleton
 
 @Singleton
 @dagger.Component(
   modules = [
-    AndroidSupportInjectionModule::class,
+    AndroidInjectionModule::class,
     MainActivityModule::class
   ]
 )
