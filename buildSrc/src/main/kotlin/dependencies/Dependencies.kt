@@ -25,7 +25,7 @@ const val MOTIF_COMPILER = "com.uber.motif:motif-compiler:0.0.7"
 
 const val APPCOMPAT = "androidx.appcompat:appcompat:1.0.0"
 const val RECYCLERVIEW = "androidx.recyclerview:recyclerview:1.0.0"
-const val CONSTRAINTLAYOUT = "androidx.constraintlayout:constraintlayout:2.0.0-alpha2"
+const val CONSTRAINTLAYOUT = "androidx.constraintlayout:constraintlayout:2.0.0-beta2"
 
 const val MATERIAL = "com.google.android.material:material:1.0.0"
 
@@ -45,6 +45,12 @@ const val DAGGER_COMPILER = "com.google.dagger:dagger-compiler:$VDAGGER"
 const val DAGGER_ANDROID = "com.google.dagger:dagger-android:$VDAGGER"
 const val DAGGER_ANDROID_PROCESSOR = "com.google.dagger:dagger-android-processor:$VDAGGER"
 const val DAGGER_ANDROID_SUPPORT = "com.google.dagger:dagger-android-support:$VDAGGER"
+
+private const val VDAGGER_REFLECT = "0.1.0"
+const val DAGGER_REFLECT = "com.jakewharton.dagger:dagger-reflect:$VDAGGER_REFLECT"
+const val DAGGER_CODEGEN = "com.jakewharton.dagger:dagger-codegen:$VDAGGER_REFLECT"
+
+const val OKHTTP = "com.squareup.okhttp3:okhttp:4.0.0"
 
 const val JUNIT = "junit:junit:4.12"
 const val TRUTH = "com.google.truth:truth:0.39"

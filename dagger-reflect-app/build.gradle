@@ -11,21 +11,21 @@ android {
   compileSdkVersion COMPILE_SDK
 
   defaultConfig {
-    applicationId "com.github.satoshun.example.dagger.android.contribute"
+    applicationId "com.github.satoshun.example"
     minSdkVersion MIN_SDK
     targetSdkVersion TARGET_SDK
+
     versionCode 1
     versionName "1.0"
     multiDexEnabled true
   }
 
-  android.defaultConfig.javaCompileOptions.annotationProcessorOptions.includeCompileClasspath = true
-
   packagingOptions {
     exclude 'plugin.xml'
-    exclude 'META-INF/eclipse.inf'
     exclude 'about_files/LICENSE-2.0.txt'
     exclude 'plugin.properties'
+
+    exclude 'META-INF/*'
   }
 
   dataBinding.enabled = true
@@ -49,7 +49,4 @@ dependencies {
 
   implementation DAGGER
   kapt DAGGER_COMPILER
-  implementation DAGGER_ANDROID
-  kapt DAGGER_ANDROID_PROCESSOR
-  implementation DAGGER_ANDROID_SUPPORT
 }
