@@ -20,6 +20,11 @@ android {
     multiDexEnabled true
   }
 
+  compileOptions {
+    sourceCompatibility 1.8
+    targetCompatibility 1.8
+  }
+
   packagingOptions {
     exclude 'plugin.xml'
     exclude 'about_files/LICENSE-2.0.txt'
@@ -27,8 +32,6 @@ android {
 
     exclude 'META-INF/*'
   }
-
-  dataBinding.enabled = true
 
   buildTypes {
     release {
@@ -48,7 +51,7 @@ dependencies {
   implementation OKHTTP
 
 //  if (properties.containsKey('android.injected.invoked.from.ide')) {
-    debugImplementation DAGGER_REFLECT
+  debugImplementation DAGGER_REFLECT
 //  } else {
 //    kaptDebug DAGGER_COMPILER
 //    debugImplementation DAGGER_REFLECT_CODEGEN

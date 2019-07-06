@@ -11,6 +11,6 @@ class MainFragment : Fragment() {
     super.onAttach(context)
     (activity!!.application as App).appComponent.inject(this)
 
-    hoge.show()
+    hoge.show("MainFragment")
   }
 }
