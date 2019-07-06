@@ -15,6 +15,7 @@ class MainActivity : AppCompatActivity() {
 
   override fun onCreate(savedInstanceState: Bundle?) {
     super.onCreate(savedInstanceState)
+    (application as App).appComponent.inject(this)
     binding = DataBindingUtil.setContentView(this, R.layout.main_act)
     setSupportActionBar(binding.toolbar)
 

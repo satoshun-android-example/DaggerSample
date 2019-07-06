@@ -9,6 +9,7 @@ class MainFragment : Fragment() {
 
   override fun onAttach(context: Context) {
     super.onAttach(context)
+    (activity!!.application as App).appComponent.inject(this)
 
     hoge.show()
   }

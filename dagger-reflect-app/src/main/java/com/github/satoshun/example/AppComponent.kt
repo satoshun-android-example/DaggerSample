@@ -4,4 +4,7 @@ import javax.inject.Singleton
 
 @Singleton
 @dagger.Component
-interface AppComponent
+interface AppComponent {
+  fun inject(activity: MainActivity): MainActivity
+  fun inject(fragment: MainFragment): MainFragment
+}

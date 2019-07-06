@@ -48,7 +48,7 @@ const val DAGGER_ANDROID_SUPPORT = "com.google.dagger:dagger-android-support:$VD
 
 private const val VDAGGER_REFLECT = "0.1.0"
 const val DAGGER_REFLECT = "com.jakewharton.dagger:dagger-reflect:$VDAGGER_REFLECT"
-const val DAGGER_CODEGEN = "com.jakewharton.dagger:dagger-codegen:$VDAGGER_REFLECT"
+const val DAGGER_REFLECT_CODEGEN = "com.jakewharton.dagger:dagger-codegen:$VDAGGER_REFLECT"
 
 const val OKHTTP = "com.squareup.okhttp3:okhttp:4.0.0"
 
