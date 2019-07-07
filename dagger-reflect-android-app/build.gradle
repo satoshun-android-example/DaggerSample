@@ -51,13 +51,17 @@ dependencies {
   implementation OKHTTP
 
   if (properties.containsKey('android.injected.invoked.from.ide')) {
-  debugImplementation DAGGER_REFLECT
+    debugImplementation DAGGER_REFLECT
   } else {
     kaptDebug DAGGER_COMPILER
+    kaptDebug DAGGER_ANDROID_PROCESSOR
     debugImplementation DAGGER_REFLECT_CODEGEN
   }
   kaptRelease DAGGER_COMPILER
+  kaptRelease DAGGER_ANDROID_PROCESSOR
   releaseImplementation DAGGER_REFLECT_CODEGEN
 
   implementation DAGGER
+  implementation DAGGER_ANDROID
+  implementation DAGGER_ANDROID_SUPPORT
 }

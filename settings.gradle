@@ -1,5 +1,6 @@
 include ':app'
 include ':dagger-reflect-app'
+include ':dagger-reflect-android-app'
 
 include ':autofactory-presenter'
 include ':autofactory'
