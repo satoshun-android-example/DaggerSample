@@ -11,7 +11,9 @@ class App : Application(), HasAndroidInjector {
   @Inject lateinit var androidInjector: DispatchingAndroidInjector<Any>
 
   override fun androidInjector(): AndroidInjector<Any> {
-    Dagger.create(AppComponent::class.java).inject(this)
+    Dagger.factory(AppComponent.Factory::class.java)
+      .create(this)
+      .inject(this)
     return androidInjector
   }
 }
