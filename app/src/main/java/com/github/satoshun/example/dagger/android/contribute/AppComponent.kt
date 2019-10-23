@@ -22,7 +22,6 @@ interface AppComponent : AndroidInjector<App> {
 
 @Module
 object AppModule {
-  @JvmStatic
   @Provides
   fun provideFuga(): Fuga = Fuga()
 }
