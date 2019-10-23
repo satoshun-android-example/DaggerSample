@@ -4,6 +4,7 @@ import android.os.Bundle
 import android.view.Menu
 import androidx.appcompat.app.AppCompatActivity
 import androidx.databinding.DataBindingUtil
+import com.github.satoshun.example.dagger.android.contribute.Fuga
 import com.github.satoshun.example.dagger.android.contribute.Hoge
 import com.github.satoshun.example.dagger.android.contribute.R
 import com.github.satoshun.example.dagger.android.contribute.databinding.MainActBinding
@@ -20,6 +21,7 @@ class MainActivity : AppCompatActivity(),
 
   @Inject lateinit var androidInjector: DispatchingAndroidInjector<Any>
   @Inject lateinit var hoge: Hoge
+  @Inject lateinit var fuga: Fuga
 
   override fun onCreate(savedInstanceState: Bundle?) {
     AndroidInjection.inject(this)
