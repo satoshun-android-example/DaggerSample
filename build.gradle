@@ -8,9 +8,6 @@ buildscript {
   dependencies {
     classpath ANDROID_PLUGIN
     classpath KOTLIN_PLUGIN
-
-    // Jetifier has bug so explicitly specify version
-    classpath JETIFIER_PLUGIN
   }
 }
 

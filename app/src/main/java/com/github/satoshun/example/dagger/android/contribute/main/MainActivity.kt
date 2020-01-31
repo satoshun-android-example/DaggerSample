@@ -23,6 +23,8 @@ class MainActivity : AppCompatActivity(),
   @Inject lateinit var hoge: Hoge
   @Inject lateinit var fuga: Fuga
 
+  @Inject lateinit var testHoge: TestHoge
+
   override fun onCreate(savedInstanceState: Bundle?) {
     AndroidInjection.inject(this)
     super.onCreate(savedInstanceState)
