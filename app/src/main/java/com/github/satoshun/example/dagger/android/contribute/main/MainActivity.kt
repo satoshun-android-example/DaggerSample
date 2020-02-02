@@ -24,6 +24,9 @@ class MainActivity : AppCompatActivity(),
   @Inject lateinit var fuga: Fuga
 
   @Inject lateinit var testHoge: TestHoge
+  @Inject lateinit var testObject: TestObject
+
+  @Inject @BaseQualifier lateinit var namedObject: NamedObject
 
   override fun onCreate(savedInstanceState: Bundle?) {
     AndroidInjection.inject(this)

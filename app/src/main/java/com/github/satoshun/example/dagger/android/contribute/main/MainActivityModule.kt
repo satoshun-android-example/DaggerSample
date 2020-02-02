@@ -3,8 +3,14 @@ package com.github.satoshun.example.dagger.android.contribute.main
 import dagger.Module
 import dagger.Provides
 import dagger.android.ContributesAndroidInjector
+import javax.inject.Qualifier
 
-@Module
+@Module(
+  includes = [
+    ObjectModule::class,
+    NamedModule::class
+  ]
+)
 interface MainActivityModule {
   companion object {
     @Provides
@@ -22,3 +28,23 @@ interface MainFragmentModule {
 }
 
 class TestHoge
+
+@Module
+object ObjectModule {
+  @Provides
+  fun provideTestObject(): TestObject = TestObject()
+}
+
+class TestObject
+
+@Qualifier
+annotation class BaseQualifier
+
+@Module
+object NamedModule {
+  @BaseQualifier
+  @Provides
+  fun provideNamedObject(): NamedObject = NamedObject()
+}
+
+class NamedObject
