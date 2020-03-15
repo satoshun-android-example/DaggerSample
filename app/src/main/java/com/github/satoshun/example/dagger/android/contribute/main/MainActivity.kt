@@ -48,7 +48,5 @@ class MainActivity : AppCompatActivity(),
     return true
   }
 
-  override fun androidInjector(): AndroidInjector<Any> {
-    return androidInjector
-  }
+  override fun androidInjector(): AndroidInjector<Any> = androidInjector
 }
