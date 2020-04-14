@@ -4,10 +4,10 @@ const val COMPILE_SDK = 29
 const val MIN_SDK = 21
 const val TARGET_SDK = 29
 
-private const val VKOTLIN = "1.3.70"
+private const val VKOTLIN = "1.3.71"
 const val KTLINT = "0.24.0"
 
-const val ANDROID_PLUGIN = "com.android.tools.build:gradle:3.6.1"
+const val ANDROID_PLUGIN = "com.android.tools.build:gradle:3.6.2"
 const val KOTLIN_PLUGIN = "org.jetbrains.kotlin:kotlin-gradle-plugin:$VKOTLIN"
 const val VERSIONS_PLUGIN = "com.github.ben-manes:gradle-versions-plugin:0.20.0"
 
@@ -16,20 +16,21 @@ const val KOTLIN = "org.jetbrains.kotlin:kotlin-stdlib:$VKOTLIN"
 const val COROUTINE = "org.jetbrains.kotlinx:kotlinx-coroutines-core:$VCOUROUTINE"
 const val UI_COROUTINE = "org.jetbrains.kotlinx:kotlinx-coroutines-android:$VCOUROUTINE"
 
-const val KTX = "androidx.core:core-ktx:1.0.0"
+const val KTX = "androidx.core:core-ktx:1.1.0"
 
 const val MOTIF = "com.uber.motif:motif:0.0.7"
 const val MOTIF_COMPILER = "com.uber.motif:motif-compiler:0.0.7"
 
-const val APPCOMPAT = "androidx.appcompat:appcompat:1.0.0"
-const val RECYCLERVIEW = "androidx.recyclerview:recyclerview:1.0.0"
+const val APPCOMPAT = "androidx.appcompat:appcompat:1.1.0"
+const val RECYCLERVIEW = "androidx.recyclerview:recyclerview:1.1.0"
 const val CONSTRAINTLAYOUT = "androidx.constraintlayout:constraintlayout:2.0.0-beta3"
 
 const val MATERIAL = "com.google.android.material:material:1.0.0"
 
-const val VIEWMODEL = "androidx.lifecycle:lifecycle-viewmodel-ktx:2.0.0"
-const val LIVEDATA = "androidx.lifecycle:lifecycle-livedata:2.0.0"
-const val LIFECYCLE_COMPILER = "androidx.lifecycle:lifecycle-compiler:2.0.0"
+const val VIEWMODEL = "androidx.lifecycle:lifecycle-viewmodel-ktx:2.2.0"
+const val VIEWMODEL_SAVEDSTATE = "androidx.lifecycle:lifecycle-viewmodel-savedstate:2.2.0"
+const val LIVEDATA = "androidx.lifecycle:lifecycle-livedata-ktx:2.2.0"
+const val LIFECYCLE_COMPILER = "androidx.lifecycle:lifecycle-compiler:2.2.0"
 
 const val RXJAVA = "io.reactivex.rxjava2:rxjava:2.2.0"
 const val RXANDROID = "io.reactivex.rxjava2:rxandroid:2.1.0"
