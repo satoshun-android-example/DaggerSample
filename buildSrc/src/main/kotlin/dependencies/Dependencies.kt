@@ -45,6 +45,12 @@ const val DAGGER_ANDROID = "com.google.dagger:dagger-android:$VDAGGER"
 const val DAGGER_ANDROID_PROCESSOR = "com.google.dagger:dagger-android-processor:$VDAGGER"
 const val DAGGER_ANDROID_SUPPORT = "com.google.dagger:dagger-android-support:$VDAGGER"
 
+private const val LOCAL_VDAGGER = "LOCAL-SNAPSHOT"
+const val DAGGER_LOCAL = "com.google.dagger:dagger:$LOCAL_VDAGGER"
+const val DAGGER_COMPILER_LOCAL = "com.google.dagger:dagger-compiler:$LOCAL_VDAGGER"
+const val DAGGER_HILT_LOCAL = "com.google.dagger:hilt-android:$LOCAL_VDAGGER"
+const val DAGGER_HILT_COMPILER_LOCAL = "com.google.dagger:hilt-android-compiler:$LOCAL_VDAGGER"
+
 private const val VDAGGER_REFLECT = "0.1.0"
 const val DAGGER_REFLECT = "com.jakewharton.dagger:dagger-reflect:$VDAGGER_REFLECT"
 const val DAGGER_REFLECT_CODEGEN = "com.jakewharton.dagger:dagger-codegen:$VDAGGER_REFLECT"

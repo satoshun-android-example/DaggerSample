@@ -1,5 +1,12 @@
 package com.github.satoshun.example
 
 import android.app.Application
+import dagger.hilt.GenerateComponents
+import dagger.hilt.android.AndroidEntryPoint
+import javax.inject.Inject
 
-class App : Application()
+@GenerateComponents
+@AndroidEntryPoint
+class App : Application() {
+  @Inject lateinit var simpleGreeter: SimpleGreeter
+}

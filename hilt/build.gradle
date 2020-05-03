@@ -2,7 +2,7 @@ import static dependencies.DependenciesKt.*
 
 apply plugin: 'com.android.application'
 apply plugin: 'kotlin-android'
-apply plugin: 'kotlin-android-extensions'
+//apply plugin: 'dagger.hilt.android.plugin'
 apply plugin: 'kotlin-kapt'
 
 android {
@@ -56,6 +56,8 @@ dependencies {
 
   implementation OKHTTP
 
-  implementation DAGGER
-  kapt DAGGER_COMPILER
+  implementation DAGGER_LOCAL
+  kapt DAGGER_COMPILER_LOCAL
+  implementation DAGGER_HILT_LOCAL
+  kapt DAGGER_HILT_COMPILER_LOCAL
 }
