@@ -2,6 +2,7 @@ import static dependencies.DependenciesKt.*
 
 buildscript {
   repositories {
+    mavenLocal()
     google()
     jcenter()
   }

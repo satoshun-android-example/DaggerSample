@@ -7,7 +7,7 @@ const val TARGET_SDK = 29
 private const val VKOTLIN = "1.3.71"
 const val KTLINT = "0.24.0"
 
-const val ANDROID_PLUGIN = "com.android.tools.build:gradle:3.6.2"
+const val ANDROID_PLUGIN = "com.android.tools.build:gradle:3.6.3"
 const val KOTLIN_PLUGIN = "org.jetbrains.kotlin:kotlin-gradle-plugin:$VKOTLIN"
 const val VERSIONS_PLUGIN = "com.github.ben-manes:gradle-versions-plugin:0.20.0"
 
@@ -25,7 +25,7 @@ const val APPCOMPAT = "androidx.appcompat:appcompat:1.1.0"
 const val RECYCLERVIEW = "androidx.recyclerview:recyclerview:1.1.0"
 const val CONSTRAINTLAYOUT = "androidx.constraintlayout:constraintlayout:2.0.0-beta3"
 
-const val MATERIAL = "com.google.android.material:material:1.0.0"
+const val MATERIAL = "com.google.android.material:material:1.1.0"
 
 const val VIEWMODEL = "androidx.lifecycle:lifecycle-viewmodel-ktx:2.2.0"
 const val VIEWMODEL_SAVEDSTATE = "androidx.lifecycle:lifecycle-viewmodel-savedstate:2.2.0"
