@@ -25,6 +25,9 @@ const val APPCOMPAT = "androidx.appcompat:appcompat:1.1.0"
 const val RECYCLERVIEW = "androidx.recyclerview:recyclerview:1.1.0"
 const val CONSTRAINTLAYOUT = "androidx.constraintlayout:constraintlayout:2.0.0-beta3"
 
+const val ACTIVITYX = "androidx.activity:activity-ktx:1.1.0"
+const val FRAGMENTX = "androidx.fragment:fragment-ktx:1.2.0"
+
 const val MATERIAL = "com.google.android.material:material:1.1.0"
 
 const val VIEWMODEL = "androidx.lifecycle:lifecycle-viewmodel-ktx:2.2.0"
@@ -50,6 +53,10 @@ const val DAGGER_LOCAL = "com.google.dagger:dagger:$LOCAL_VDAGGER"
 const val DAGGER_COMPILER_LOCAL = "com.google.dagger:dagger-compiler:$LOCAL_VDAGGER"
 const val DAGGER_HILT_LOCAL = "com.google.dagger:hilt-android:$LOCAL_VDAGGER"
 const val DAGGER_HILT_COMPILER_LOCAL = "com.google.dagger:hilt-android-compiler:$LOCAL_VDAGGER"
+
+private const val DEV_LOCAL_VDAGGER = "DEV-SNAPSHOT"
+const val DAGGER_HILT_DEV_LOCAL = "com.google.dagger:hilt-android:$DEV_LOCAL_VDAGGER"
+const val DAGGER_HILT_COMPILER_DEV_LOCAL = "com.google.dagger:hilt-android-compiler:$DEV_LOCAL_VDAGGER"
 
 private const val VDAGGER_REFLECT = "0.1.0"
 const val DAGGER_REFLECT = "com.jakewharton.dagger:dagger-reflect:$VDAGGER_REFLECT"

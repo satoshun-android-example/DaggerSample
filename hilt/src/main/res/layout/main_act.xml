@@ -19,14 +19,28 @@
       app:popupTheme="@style/AppTheme.PopupOverlay" />
   </com.google.android.material.appbar.AppBarLayout>
 
-  <include
-    android:id="@+id/content"
-    layout="@layout/content_main" />
-
-  <Button
-    android:id="@+id/fab"
+  <androidx.constraintlayout.widget.ConstraintLayout
     android:layout_width="match_parent"
-    android:layout_height="wrap_content"
-    android:layout_gravity="bottom|end"
-    android:text="GO Calculator Activity" />
+    android:layout_height="match_parent"
+    app:layout_behavior="@string/appbar_scrolling_view_behavior"
+    tools:context="com.github.satoshun.example.MainActivity"
+    tools:showIn="@layout/main_act">
+
+    <Button
+      android:id="@+id/edit"
+      android:layout_width="match_parent"
+      android:layout_height="wrap_content"
+      android:text="DO TASK"
+      app:layout_constraintTop_toBottomOf="@+id/title"
+      tools:ignore="HardcodedText" />
+
+    <TextView
+      android:id="@+id/title"
+      android:layout_width="wrap_content"
+      android:layout_height="wrap_content"
+      android:text="Hello World!"
+      app:layout_constraintLeft_toLeftOf="parent"
+      app:layout_constraintRight_toRightOf="parent"
+      app:layout_constraintTop_toTopOf="parent" />
+  </androidx.constraintlayout.widget.ConstraintLayout>
 </androidx.coordinatorlayout.widget.CoordinatorLayout>

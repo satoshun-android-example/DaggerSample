@@ -2,7 +2,7 @@ import static dependencies.DependenciesKt.*
 
 apply plugin: 'com.android.application'
 apply plugin: 'kotlin-android'
-//apply plugin: 'dagger.hilt.android.plugin'
+apply plugin: 'dagger.hilt.android.plugin'
 apply plugin: 'kotlin-kapt'
 
 android {
@@ -47,8 +47,12 @@ android {
 dependencies {
   implementation KOTLIN
 
+  implementation ACTIVITYX
+  implementation FRAGMENTX
+
   implementation VIEWMODEL
   implementation VIEWMODEL_SAVEDSTATE
+  implementation LIVEDATA
 
   implementation APPCOMPAT
   implementation CONSTRAINTLAYOUT
@@ -58,6 +62,6 @@ dependencies {
 
   implementation DAGGER_LOCAL
   kapt DAGGER_COMPILER_LOCAL
-  implementation DAGGER_HILT_LOCAL
-  kapt DAGGER_HILT_COMPILER_LOCAL
+  implementation DAGGER_HILT_DEV_LOCAL
+  kapt DAGGER_HILT_COMPILER_DEV_LOCAL
 }
