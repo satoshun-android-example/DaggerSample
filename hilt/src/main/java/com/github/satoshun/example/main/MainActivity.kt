@@ -23,12 +23,13 @@ class MainActivity : AppCompatActivity() {
   @Inject lateinit var featureCounter: FeatureCounter
   @Inject lateinit var singletonGreeter: SingletonGreeter
 
+  @Inject lateinit var mainActivityCounter: MainActivityCounter
+
   override fun onCreate(savedInstanceState: Bundle?) {
     super.onCreate(savedInstanceState)
     setContentView(R.layout.main_act)
     binding = MainActBinding.bind(findViewById<ViewGroup>(android.R.id.content)[0])
     setSupportActionBar(binding.toolbar)
-
 
     lifecycleScope.launch {
       while (true) {
