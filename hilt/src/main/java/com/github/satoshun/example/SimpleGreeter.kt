@@ -9,3 +9,11 @@ class SimpleGreeter @Inject constructor() {
     return count++
   }
 }
+
+class SimpleGreeter2 @Inject constructor() {
+  private var count: Int = 0
+
+  fun countUp(): Int {
+    return count++
+  }
+}

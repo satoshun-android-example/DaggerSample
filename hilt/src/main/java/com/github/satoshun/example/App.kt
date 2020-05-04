@@ -9,4 +9,5 @@ import javax.inject.Inject
 @AndroidEntryPoint
 class App : Application() {
   @Inject lateinit var simpleGreeter: SimpleGreeter
+  @Inject lateinit var simpleGreeter2: SimpleGreeter2
 }
