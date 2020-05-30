@@ -60,8 +60,8 @@ dependencies {
 
   implementation OKHTTP
 
-  implementation DAGGER_LOCAL
-  kapt DAGGER_COMPILER_LOCAL
-  implementation DAGGER_HILT_DEV_LOCAL
-  kapt DAGGER_HILT_COMPILER_DEV_LOCAL
+  implementation DAGGER
+  kapt DAGGER_COMPILER
+  implementation DAGGER_HILT
+  kapt DAGGER_HILT_COMPILER
 }

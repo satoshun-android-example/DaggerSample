@@ -9,7 +9,7 @@ buildscript {
   dependencies {
     classpath ANDROID_PLUGIN
     classpath KOTLIN_PLUGIN
-    classpath 'com.google.dagger:hilt-android-gradle-plugin:DEV-SNAPSHOT'
+    classpath DAGGER_HILT_PLUGIN
   }
 }
 
