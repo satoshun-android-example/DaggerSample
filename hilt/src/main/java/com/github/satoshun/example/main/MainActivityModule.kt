@@ -1,18 +1,26 @@
 package com.github.satoshun.example.main
 
+import android.app.Activity
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn
-import dagger.hilt.android.components.ActivityRetainedComponent
-import dagger.hilt.android.scopes.ActivityRetainedScoped
+import dagger.hilt.android.components.ActivityComponent
+import dagger.hilt.android.scopes.ActivityScoped
 
 @Module
-@InstallIn(ActivityRetainedComponent::class)
+@InstallIn(ActivityComponent::class)
 object MainActivityModule {
   @Provides
-  @ActivityRetainedScoped
-  fun provideMainActivityCounter(): MainActivityCounter =
-    MainActivityCounter()
+  @ActivityScoped
+  fun provideMainActivityCounter(activity: MainActivity): MainActivityCounter =
+    MainActivityCounter(activity)
+
+  @Provides
+  fun provideMainActivity(activity: Activity): MainActivity =
+    activity as MainActivity
 }
 
-class MainActivityCounter(var count: Int = 0)
+class MainActivityCounter(
+  private val activity: Activity,
+  var count: Int = 0
+)
