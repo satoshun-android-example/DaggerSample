@@ -1,5 +1,6 @@
 package com.github.satoshun.example.dagger.android.contribute.main
 
+import com.github.satoshun.example.dagger.android.contribute.sub.SubActivity
 import dagger.Module
 import dagger.Provides
 import dagger.android.ContributesAndroidInjector
@@ -19,6 +20,9 @@ interface MainActivityModule {
 
   @ContributesAndroidInjector(modules = [MainFragmentModule::class])
   fun contributeMainActivity(): MainActivity
+
+  @ContributesAndroidInjector
+  fun contributeSubActivity(): SubActivity
 }
 
 @Module

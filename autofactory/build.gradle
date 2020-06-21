@@ -8,12 +8,12 @@ apply plugin: 'kotlin-kapt'
 apply from: "${rootDir}/jetifier_shared.gradle"
 
 android {
-  compileSdkVersion 28
+  compileSdkVersion 30
 
   defaultConfig {
     applicationId "com.github.satoshun.example.dagger.android.contribute"
     minSdkVersion 21
-    targetSdkVersion 28
+    targetSdkVersion 30
     versionCode 1
     versionName "1.0"
     multiDexEnabled true
