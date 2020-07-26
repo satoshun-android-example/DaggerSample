@@ -1,5 +1,6 @@
 package com.github.satoshun.example.main
 
+import android.content.Intent
 import android.os.Bundle
 import android.view.ViewGroup
 import androidx.appcompat.app.AppCompatActivity
@@ -9,6 +10,7 @@ import com.github.satoshun.example.FeatureCounter
 import com.github.satoshun.example.R
 import com.github.satoshun.example.SimpleGreeter
 import com.github.satoshun.example.SingletonGreeter
+import com.github.satoshun.example.customcomponent.CustomComponentActivity
 import com.github.satoshun.example.databinding.MainActBinding
 import dagger.hilt.android.AndroidEntryPoint
 import kotlinx.coroutines.delay
@@ -35,6 +37,10 @@ class MainActivity : AppCompatActivity(R.layout.main_act) {
         delay(1000)
         println(simpleGreeter.countUp())
       }
+    }
+
+    binding.edit.setOnClickListener {
+      startActivity(Intent(this, CustomComponentActivity::class.java))
     }
   }
 }

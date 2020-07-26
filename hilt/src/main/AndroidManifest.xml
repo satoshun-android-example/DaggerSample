@@ -24,5 +24,6 @@
     </activity>
 
     <activity android:name=".sub.SubActivity" />
+    <activity android:name=".customcomponent.CustomComponentActivity" />
   </application>
 </manifest>
