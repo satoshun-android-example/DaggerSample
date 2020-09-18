@@ -11,15 +11,12 @@ import dagger.android.AndroidInjector
 import dagger.android.ContributesAndroidInjector
 import dagger.android.DispatchingAndroidInjector
 import dagger.android.HasAndroidInjector
-import dagger.hilt.DefineComponent
 import dagger.hilt.InstallIn
 import dagger.hilt.android.HiltAndroidApp
 import dagger.hilt.android.components.ApplicationComponent
 import dagger.hilt.android.qualifiers.ApplicationContext
-import dagger.hilt.components.SingletonComponent
-import dagger.hilt.internal.GeneratedComponentManagerHolder
+import dagger.hilt.android.scopes.ActivityScoped
 import javax.inject.Inject
-import javax.inject.Singleton
 
 @HiltAndroidApp
 class App : Application(), HasAndroidInjector {
@@ -41,6 +38,7 @@ interface TopLevel
 
 @Module
 interface AppModule {
+  @ActivityScoped
   @ContributesAndroidInjector(
     modules = [MainActivityModule::class]
   )

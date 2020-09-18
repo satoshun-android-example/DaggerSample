@@ -3,8 +3,8 @@ package com.github.satoshun.example.main
 import android.content.Intent
 import android.os.Bundle
 import android.view.ViewGroup
-import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.get
+import androidx.fragment.app.commit
 import androidx.lifecycle.lifecycleScope
 import com.github.satoshun.example.R
 import com.github.satoshun.example.SimpleGreeter
@@ -12,11 +12,12 @@ import com.github.satoshun.example.SingletonGreeter
 import com.github.satoshun.example.databinding.MainActBinding
 import com.github.satoshun.example.sub.SubActivity
 import dagger.android.AndroidInjection
+import dagger.android.support.DaggerAppCompatActivity
 import kotlinx.coroutines.delay
 import kotlinx.coroutines.launch
 import javax.inject.Inject
 
-class MainActivity : AppCompatActivity(R.layout.main_act) {
+class MainActivity : DaggerAppCompatActivity(R.layout.main_act) {
   private lateinit var binding: MainActBinding
 
   @Inject lateinit var simpleGreeter: SimpleGreeter
@@ -45,6 +46,12 @@ class MainActivity : AppCompatActivity(R.layout.main_act) {
       )
     }
 
-    println(simpleGreeter)
+    if (savedInstanceState == null) {
+      supportFragmentManager.commit {
+        add(R.id.container, MainFragment())
+      }
+    }
+
+    println("TESTTEST MainActivity $mainActivityCounter")
   }
 }
