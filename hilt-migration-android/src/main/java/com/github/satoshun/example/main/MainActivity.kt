@@ -9,6 +9,8 @@ import androidx.lifecycle.lifecycleScope
 import com.github.satoshun.example.R
 import com.github.satoshun.example.SimpleGreeter
 import com.github.satoshun.example.SingletonGreeter
+import com.github.satoshun.example.common.CommonDialogFragment
+import com.github.satoshun.example.common.CommonDialogFragmentCounter
 import com.github.satoshun.example.databinding.MainActBinding
 import com.github.satoshun.example.sub.SubActivity
 import dagger.android.AndroidInjection
@@ -24,6 +26,7 @@ class MainActivity : DaggerAppCompatActivity(R.layout.main_act) {
   @Inject lateinit var singletonGreeter: SingletonGreeter
 
   @Inject lateinit var mainActivityCounter: MainActivityCounter
+  @Inject lateinit var commonDialogFragmentCounter: CommonDialogFragmentCounter
 
   override fun onCreate(savedInstanceState: Bundle?) {
     super.onCreate(savedInstanceState)
@@ -46,6 +49,10 @@ class MainActivity : DaggerAppCompatActivity(R.layout.main_act) {
       )
     }
 
+    binding.title.setOnClickListener {
+      CommonDialogFragment().show(supportFragmentManager, "TEST")
+    }
+
     if (savedInstanceState == null) {
       supportFragmentManager.commit {
         add(R.id.container, MainFragment())
@@ -53,5 +60,6 @@ class MainActivity : DaggerAppCompatActivity(R.layout.main_act) {
     }
 
     println("TESTTEST MainActivity $mainActivityCounter")
+    println("TESTTEST MainActivity $commonDialogFragmentCounter")
   }
 }
