@@ -1,0 +1,71 @@
+import static dependencies.DependenciesKt.*
+
+apply plugin: 'com.android.application'
+apply plugin: 'kotlin-android'
+apply plugin: 'dagger.hilt.android.plugin'
+apply plugin: 'kotlin-kapt'
+
+android {
+  compileSdkVersion COMPILE_SDK
+
+  defaultConfig {
+    applicationId "com.github.satoshun.example.dagger.android.contribute"
+    minSdkVersion MIN_SDK
+    targetSdkVersion TARGET_SDK
+    versionCode 1
+    versionName "1.0"
+    multiDexEnabled true
+  }
+
+  android.defaultConfig.javaCompileOptions.annotationProcessorOptions.includeCompileClasspath = true
+
+  packagingOptions {
+    exclude 'plugin.xml'
+    exclude 'META-INF/eclipse.inf'
+    exclude 'about_files/LICENSE-2.0.txt'
+    exclude 'plugin.properties'
+  }
+
+  viewBinding.enabled = true
+
+  compileOptions {
+    sourceCompatibility JavaVersion.VERSION_1_8
+    targetCompatibility JavaVersion.VERSION_1_8
+  }
+  packagingOptions {
+    exclude "META-INF/*"
+  }
+
+  buildTypes {
+    release {
+      minifyEnabled false
+      proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+    }
+  }
+}
+
+dependencies {
+  implementation KOTLIN
+
+  implementation ACTIVITYX
+  implementation FRAGMENTX
+
+  implementation VIEWMODEL
+  implementation VIEWMODEL_SAVEDSTATE
+  implementation LIVEDATA
+
+  implementation APPCOMPAT
+  implementation CONSTRAINTLAYOUT
+  implementation MATERIAL
+
+  implementation OKHTTP
+
+  implementation DAGGER
+  kapt DAGGER_COMPILER
+  implementation DAGGER_HILT
+  kapt DAGGER_HILT_COMPILER
+
+  implementation DAGGER_ANDROID
+  kapt DAGGER_ANDROID_PROCESSOR
+  implementation DAGGER_ANDROID_SUPPORT
+}
