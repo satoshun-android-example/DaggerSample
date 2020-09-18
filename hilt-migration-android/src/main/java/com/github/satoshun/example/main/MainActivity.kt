@@ -1,19 +1,17 @@
 package com.github.satoshun.example.main
 
+import android.content.Intent
 import android.os.Bundle
 import android.view.ViewGroup
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.get
 import androidx.lifecycle.lifecycleScope
-import com.github.satoshun.example.FeatureCounter
 import com.github.satoshun.example.R
 import com.github.satoshun.example.SimpleGreeter
 import com.github.satoshun.example.SingletonGreeter
 import com.github.satoshun.example.databinding.MainActBinding
-import dagger.Module
+import com.github.satoshun.example.sub.SubActivity
 import dagger.android.AndroidInjection
-import dagger.android.AndroidInjector
-import dagger.android.ContributesAndroidInjector
 import kotlinx.coroutines.delay
 import kotlinx.coroutines.launch
 import javax.inject.Inject
@@ -32,6 +30,8 @@ class MainActivity : AppCompatActivity(R.layout.main_act) {
     binding = MainActBinding.bind(findViewById<ViewGroup>(android.R.id.content)[0])
     setSupportActionBar(binding.toolbar)
 
+    binding.title.text = "INSTANCE $simpleGreeter"
+
     lifecycleScope.launch {
       while (true) {
         delay(1000)
@@ -40,6 +40,11 @@ class MainActivity : AppCompatActivity(R.layout.main_act) {
     }
 
     binding.edit.setOnClickListener {
+      startActivity(
+        Intent(this@MainActivity, SubActivity::class.java)
+      )
     }
+
+    println(simpleGreeter)
   }
 }

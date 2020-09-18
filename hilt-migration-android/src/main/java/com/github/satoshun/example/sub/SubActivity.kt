@@ -10,15 +10,16 @@ import com.github.satoshun.example.R
 import com.github.satoshun.example.SimpleGreeter
 import com.github.satoshun.example.SingletonGreeter
 import com.github.satoshun.example.databinding.MainActBinding
+import dagger.hilt.android.AndroidEntryPoint
 import kotlinx.coroutines.delay
 import kotlinx.coroutines.launch
 import javax.inject.Inject
 
+@AndroidEntryPoint
 class SubActivity : AppCompatActivity() {
   private lateinit var binding: MainActBinding
 
   @Inject lateinit var simpleGreeter: SimpleGreeter
-  @Inject lateinit var featureCounter: FeatureCounter
   @Inject lateinit var singletonGreeter: SingletonGreeter
 
   @Inject lateinit var subActivityCounter: SubActivityCounter
@@ -28,6 +29,10 @@ class SubActivity : AppCompatActivity() {
     setContentView(R.layout.main_act)
     binding = MainActBinding.bind(findViewById<ViewGroup>(android.R.id.content)[0])
     setSupportActionBar(binding.toolbar)
+
+    title = "サブ"
+
+    binding.title.text = "INSTANCE $simpleGreeter"
 
     lifecycleScope.launch {
       while (true) {
