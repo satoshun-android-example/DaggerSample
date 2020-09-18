@@ -4,8 +4,8 @@ import android.os.Bundle
 import android.view.ViewGroup
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.get
+import androidx.fragment.app.commit
 import androidx.lifecycle.lifecycleScope
-import com.github.satoshun.example.FeatureCounter
 import com.github.satoshun.example.R
 import com.github.satoshun.example.SimpleGreeter
 import com.github.satoshun.example.SingletonGreeter
@@ -16,7 +16,7 @@ import kotlinx.coroutines.launch
 import javax.inject.Inject
 
 @AndroidEntryPoint
-class SubActivity : AppCompatActivity() {
+class SubActivity : AppCompatActivity(R.layout.main_act) {
   private lateinit var binding: MainActBinding
 
   @Inject lateinit var simpleGreeter: SimpleGreeter
@@ -26,7 +26,6 @@ class SubActivity : AppCompatActivity() {
 
   override fun onCreate(savedInstanceState: Bundle?) {
     super.onCreate(savedInstanceState)
-    setContentView(R.layout.main_act)
     binding = MainActBinding.bind(findViewById<ViewGroup>(android.R.id.content)[0])
     setSupportActionBar(binding.toolbar)
 
@@ -40,5 +39,13 @@ class SubActivity : AppCompatActivity() {
         println(simpleGreeter.countUp())
       }
     }
+
+    if (savedInstanceState == null) {
+      supportFragmentManager.commit {
+        add(R.id.container, SubFragment())
+      }
+    }
+
+    println("TESTTESTTEST SubActivity $subActivityCounter")
   }
 }
