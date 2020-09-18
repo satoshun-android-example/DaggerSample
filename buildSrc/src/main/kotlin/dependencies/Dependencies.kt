@@ -4,10 +4,10 @@ const val COMPILE_SDK = 29
 const val MIN_SDK = 21
 const val TARGET_SDK = 29
 
-private const val VKOTLIN = "1.3.71"
+private const val VKOTLIN = "1.4.10"
 const val KTLINT = "0.24.0"
 
-const val ANDROID_PLUGIN = "com.android.tools.build:gradle:4.0.0"
+const val ANDROID_PLUGIN = "com.android.tools.build:gradle:4.0.1"
 const val KOTLIN_PLUGIN = "org.jetbrains.kotlin:kotlin-gradle-plugin:$VKOTLIN"
 const val VERSIONS_PLUGIN = "com.github.ben-manes:gradle-versions-plugin:0.20.0"
 
@@ -41,14 +41,14 @@ const val RXANDROID = "io.reactivex.rxjava2:rxandroid:2.1.0"
 const val GROUPIE = "com.xwray:groupie:2.1.0"
 const val GROUPIE_DATABINDING = "com.xwray:groupie-databinding:2.1.0"
 
-private const val VDAGGER = "2.28.3"
+private const val VDAGGER = "2.29.1"
 const val DAGGER = "com.google.dagger:dagger:$VDAGGER"
 const val DAGGER_COMPILER = "com.google.dagger:dagger-compiler:$VDAGGER"
 const val DAGGER_ANDROID = "com.google.dagger:dagger-android:$VDAGGER"
 const val DAGGER_ANDROID_PROCESSOR = "com.google.dagger:dagger-android-processor:$VDAGGER"
 const val DAGGER_ANDROID_SUPPORT = "com.google.dagger:dagger-android-support:$VDAGGER"
 
-private const val VDAGGER_HILT = "2.28.3-alpha"
+private const val VDAGGER_HILT = "2.29.1-alpha"
 const val DAGGER_HILT_PLUGIN = "com.google.dagger:hilt-android-gradle-plugin:$VDAGGER_HILT"
 const val DAGGER_HILT = "com.google.dagger:hilt-android:$VDAGGER_HILT"
 const val DAGGER_HILT_COMPILER = "com.google.dagger:hilt-android-compiler:$VDAGGER_HILT"
