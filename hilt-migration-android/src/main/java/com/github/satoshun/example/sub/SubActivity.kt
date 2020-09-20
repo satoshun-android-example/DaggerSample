@@ -2,6 +2,7 @@ package com.github.satoshun.example.sub
 
 import android.os.Bundle
 import android.view.ViewGroup
+import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.get
 import androidx.fragment.app.commit
 import androidx.lifecycle.lifecycleScope
@@ -11,6 +12,10 @@ import com.github.satoshun.example.SingletonGreeter
 import com.github.satoshun.example.common.CommonDialogFragment
 import com.github.satoshun.example.common.CommonDialogFragmentCounter
 import com.github.satoshun.example.databinding.MainActBinding
+import dagger.android.AndroidInjection
+import dagger.android.AndroidInjector
+import dagger.android.DispatchingAndroidInjector
+import dagger.android.HasAndroidInjector
 import dagger.android.support.DaggerAppCompatActivity
 import kotlinx.coroutines.delay
 import kotlinx.coroutines.launch
