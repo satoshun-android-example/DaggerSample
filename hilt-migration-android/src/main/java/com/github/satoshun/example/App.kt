@@ -4,8 +4,6 @@ import android.app.Application
 import android.content.Context
 import com.github.satoshun.example.main.MainActivity
 import com.github.satoshun.example.main.MainActivityModule
-import com.github.satoshun.example.sub.SubActivity
-import com.github.satoshun.example.sub.SubActivityModule
 import dagger.Binds
 import dagger.Module
 import dagger.android.AndroidInjectionModule
@@ -13,44 +11,39 @@ import dagger.android.AndroidInjector
 import dagger.android.ContributesAndroidInjector
 import dagger.android.DispatchingAndroidInjector
 import dagger.android.HasAndroidInjector
+import dagger.hilt.InstallIn
+import dagger.hilt.android.HiltAndroidApp
+import dagger.hilt.android.components.ApplicationComponent
+import dagger.hilt.android.qualifiers.ApplicationContext
+import dagger.hilt.android.scopes.ActivityScoped
 import javax.inject.Inject
-import javax.inject.Singleton
 
+@HiltAndroidApp
 class App : Application(), HasAndroidInjector {
   @Inject lateinit var androidInjector: DispatchingAndroidInjector<Any>
 
   override fun androidInjector(): AndroidInjector<Any> {
-    DaggerAppComponent.factory().create(this).inject(this)
     return androidInjector
   }
 }
 
-@Singleton
-@dagger.Component(
-  modules = [
+@InstallIn(ApplicationComponent::class)
+@Module(
+  includes = [
     AndroidInjectionModule::class,
     AppModule::class
   ]
 )
-interface AppComponent : AndroidInjector<App> {
-  @dagger.Component.Factory
-  interface Factory : AndroidInjector.Factory<App>
-}
+interface TopLevel
 
 @Module
 interface AppModule {
-  @ActivityScope
+  @ActivityScoped
   @ContributesAndroidInjector(
     modules = [MainActivityModule::class]
   )
   fun contributeMainActivity(): MainActivity
 
-  @ActivityScope
-  @ContributesAndroidInjector(
-    modules = [SubActivityModule::class]
-  )
-  fun contributeSubActivity(): SubActivity
-
   @Binds
-  fun bindContext(app: App): Context
+  fun bindContext(@ApplicationContext app: Context): Context
 }

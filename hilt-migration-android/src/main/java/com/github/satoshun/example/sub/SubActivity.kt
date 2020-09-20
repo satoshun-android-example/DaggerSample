@@ -2,6 +2,7 @@ package com.github.satoshun.example.sub
 
 import android.os.Bundle
 import android.view.ViewGroup
+import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.get
 import androidx.fragment.app.commit
 import androidx.lifecycle.lifecycleScope
@@ -11,12 +12,17 @@ import com.github.satoshun.example.SingletonGreeter
 import com.github.satoshun.example.common.CommonDialogFragment
 import com.github.satoshun.example.common.CommonDialogFragmentCounter
 import com.github.satoshun.example.databinding.MainActBinding
-import dagger.android.support.DaggerAppCompatActivity
+import dagger.android.AndroidInjector
+import dagger.android.DispatchingAndroidInjector
+import dagger.android.HasAndroidInjector
+import dagger.hilt.android.AndroidEntryPoint
 import kotlinx.coroutines.delay
 import kotlinx.coroutines.launch
 import javax.inject.Inject
 
-class SubActivity : DaggerAppCompatActivity(R.layout.main_act) {
+@AndroidEntryPoint
+class SubActivity : AppCompatActivity(R.layout.main_act),
+  HasAndroidInjector {
 
   private lateinit var binding: MainActBinding
 
@@ -25,6 +31,8 @@ class SubActivity : DaggerAppCompatActivity(R.layout.main_act) {
 
   @Inject lateinit var subActivityCounter: SubActivityCounter
   @Inject lateinit var commonDialogFragmentCounter: CommonDialogFragmentCounter
+
+  @Inject lateinit var androidInjector: DispatchingAndroidInjector<Any>
 
   override fun onCreate(savedInstanceState: Bundle?) {
     super.onCreate(savedInstanceState)
@@ -55,4 +63,6 @@ class SubActivity : DaggerAppCompatActivity(R.layout.main_act) {
     println("TESTTESTTEST SubActivity $subActivityCounter")
     println("TESTTESTTEST SubActivity $commonDialogFragmentCounter")
   }
+
+  override fun androidInjector(): AndroidInjector<Any> = androidInjector
 }
