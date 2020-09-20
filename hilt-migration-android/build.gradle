@@ -2,7 +2,6 @@ import static dependencies.DependenciesKt.*
 
 apply plugin: 'com.android.application'
 apply plugin: 'kotlin-android'
-apply plugin: 'dagger.hilt.android.plugin'
 apply plugin: 'kotlin-kapt'
 
 android {
@@ -62,8 +61,6 @@ dependencies {
 
   implementation DAGGER
   kapt DAGGER_COMPILER
-  implementation DAGGER_HILT
-  kapt DAGGER_HILT_COMPILER
 
   implementation DAGGER_ANDROID
   kapt DAGGER_ANDROID_PROCESSOR
