@@ -4,6 +4,8 @@ import android.app.Application
 import android.content.Context
 import com.github.satoshun.example.main.MainActivity
 import com.github.satoshun.example.main.MainActivityModule
+import com.github.satoshun.example.sub.SubActivity
+import com.github.satoshun.example.sub.SubActivityModule
 import dagger.Binds
 import dagger.Module
 import dagger.android.AndroidInjectionModule
@@ -42,6 +44,12 @@ interface AppModule {
     modules = [MainActivityModule::class]
   )
   fun contributeMainActivity(): MainActivity
+
+  @ActivityScope
+  @ContributesAndroidInjector(
+    modules = [SubActivityModule::class]
+  )
+  fun contributeSubActivity(): SubActivity
 
   @Binds
   fun bindContext(app: App): Context
