@@ -1,18 +1,18 @@
 package com.github.satoshun.example.main
 
 import android.app.Activity
-import com.github.satoshun.example.ActivityScope
 import com.github.satoshun.example.common.CommonDialogFragmentModule
 import dagger.Module
 import dagger.Provides
 import dagger.android.ContributesAndroidInjector
+import dagger.hilt.android.scopes.ActivityScoped
 
 @Module(
   includes = [CommonDialogFragmentModule::class]
 )
 interface MainActivityModule {
   companion object {
-    @ActivityScope
+    @ActivityScoped
     @Provides
     fun provideMainActivityCounter(activity: MainActivity): MainActivityCounter =
       MainActivityCounter(activity)
