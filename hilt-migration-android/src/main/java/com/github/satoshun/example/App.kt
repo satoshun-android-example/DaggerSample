@@ -11,39 +11,38 @@ import dagger.android.AndroidInjector
 import dagger.android.ContributesAndroidInjector
 import dagger.android.DispatchingAndroidInjector
 import dagger.android.HasAndroidInjector
-import dagger.hilt.InstallIn
-import dagger.hilt.android.HiltAndroidApp
-import dagger.hilt.android.components.ApplicationComponent
-import dagger.hilt.android.qualifiers.ApplicationContext
-import dagger.hilt.android.scopes.ActivityScoped
 import javax.inject.Inject
+import javax.inject.Singleton
 
-@HiltAndroidApp
 class App : Application(), HasAndroidInjector {
   @Inject lateinit var androidInjector: DispatchingAndroidInjector<Any>
 
   override fun androidInjector(): AndroidInjector<Any> {
+    DaggerAppComponent.factory().create(this).inject(this)
     return androidInjector
   }
 }
 
-@InstallIn(ApplicationComponent::class)
-@Module(
-  includes = [
+@Singleton
+@dagger.Component(
+  modules = [
     AndroidInjectionModule::class,
     AppModule::class
   ]
 )
-interface TopLevel
+interface AppComponent : AndroidInjector<App> {
+  @dagger.Component.Factory
+  interface Factory : AndroidInjector.Factory<App>
+}
 
 @Module
 interface AppModule {
-  @ActivityScoped
+  @ActivityScope
   @ContributesAndroidInjector(
     modules = [MainActivityModule::class]
   )
   fun contributeMainActivity(): MainActivity
 
   @Binds
-  fun bindContext(@ApplicationContext app: Context): Context
+  fun bindContext(app: App): Context
 }
