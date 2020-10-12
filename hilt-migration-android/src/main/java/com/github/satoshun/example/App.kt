@@ -31,19 +31,19 @@ class App : Application(), HasAndroidInjector {
 @Module(
   includes = [
     AndroidInjectionModule::class,
-    AppModule::class
+    ActivityModule::class
   ]
 )
-interface TopLevel
+interface AppModule {
+  @Binds
+  fun bindContext(@ApplicationContext app: Context): Context
+}
 
 @Module
-interface AppModule {
+interface ActivityModule {
   @ActivityScoped
   @ContributesAndroidInjector(
     modules = [MainActivityModule::class]
   )
   fun contributeMainActivity(): MainActivity
-
-  @Binds
-  fun bindContext(@ApplicationContext app: Context): Context
 }
