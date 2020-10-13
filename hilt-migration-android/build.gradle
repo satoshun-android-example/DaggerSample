@@ -64,6 +64,8 @@ dependencies {
   kapt DAGGER_COMPILER
   implementation DAGGER_HILT
   kapt DAGGER_HILT_COMPILER
+  implementation DAGGER_HILT_VIEWMODEL
+  kapt DAGGER_HILT_ANDROIDX_COMPILER
 
   implementation DAGGER_ANDROID
   kapt DAGGER_ANDROID_PROCESSOR

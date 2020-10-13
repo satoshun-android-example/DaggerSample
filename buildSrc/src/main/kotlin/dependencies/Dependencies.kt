@@ -53,6 +53,10 @@ const val DAGGER_HILT_PLUGIN = "com.google.dagger:hilt-android-gradle-plugin:$VD
 const val DAGGER_HILT = "com.google.dagger:hilt-android:$VDAGGER_HILT"
 const val DAGGER_HILT_COMPILER = "com.google.dagger:hilt-android-compiler:$VDAGGER_HILT"
 
+private const val VDAGGER_HILT_ANDROIDX = "1.0.0-alpha02"
+const val DAGGER_HILT_ANDROIDX_COMPILER = "androidx.hilt:hilt-compiler:$VDAGGER_HILT_ANDROIDX"
+const val DAGGER_HILT_VIEWMODEL = "androidx.hilt:hilt-lifecycle-viewmodel:$VDAGGER_HILT_ANDROIDX"
+
 private const val VDAGGER_REFLECT = "0.1.0"
 const val DAGGER_REFLECT = "com.jakewharton.dagger:dagger-reflect:$VDAGGER_REFLECT"
 const val DAGGER_REFLECT_CODEGEN = "com.jakewharton.dagger:dagger-codegen:$VDAGGER_REFLECT"
