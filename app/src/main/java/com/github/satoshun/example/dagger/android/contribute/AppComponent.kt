@@ -1,6 +1,7 @@
 package com.github.satoshun.example.dagger.android.contribute
 
 import com.github.satoshun.example.dagger.android.contribute.main.MainActivityModule
+import dagger.Component
 import dagger.Module
 import dagger.Provides
 import dagger.android.AndroidInjectionModule
@@ -8,7 +9,7 @@ import dagger.android.AndroidInjector
 import javax.inject.Singleton
 
 @Singleton
-@dagger.Component(
+@Component(
   modules = [
     AndroidInjectionModule::class,
     MainActivityModule::class,
@@ -16,7 +17,7 @@ import javax.inject.Singleton
   ]
 )
 interface AppComponent : AndroidInjector<App> {
-  @dagger.Component.Factory
+  @Component.Factory
   interface Factory : AndroidInjector.Factory<App>
 }
 

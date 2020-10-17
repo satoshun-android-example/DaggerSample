@@ -1,30 +1,37 @@
 package com.github.satoshun.example
 
-import android.app.Application
 import android.content.Context
 import com.github.satoshun.example.main.MainActivity
 import com.github.satoshun.example.main.MainActivityModule
 import dagger.Binds
 import dagger.BindsInstance
 import dagger.Module
-import dagger.android.*
+import dagger.android.AndroidInjectionModule
+import dagger.android.AndroidInjector
+import dagger.android.ContributesAndroidInjector
+import dagger.android.support.DaggerApplication
 import dagger.hilt.DefineComponent
+import dagger.hilt.EntryPoint
+import dagger.hilt.EntryPoints
 import dagger.hilt.InstallIn
 import dagger.hilt.android.HiltAndroidApp
 import dagger.hilt.android.components.ApplicationComponent
 import dagger.hilt.android.qualifiers.ApplicationContext
 import dagger.hilt.android.scopes.ActivityScoped
+import dagger.hilt.components.SingletonComponent
 import dagger.hilt.internal.GeneratedComponentManagerHolder
 import javax.inject.Inject
 
 @HiltAndroidApp
-class App : Application(), HasAndroidInjector {
-  @Inject lateinit var androidInjector: DispatchingAndroidInjector<Any>
+class App : DaggerApplication() {
+  @EntryPoint
+  @InstallIn(SingletonComponent::class)
+  interface ApplicationInjector : AndroidInjector<App>
+
   @Inject lateinit var appComponentFactory: AppComponent.Factory
 
-  override fun androidInjector(): AndroidInjector<Any> {
-    return androidInjector
-  }
+  override fun applicationInjector(): AndroidInjector<App> =
+    EntryPoints.get(this, ApplicationInjector::class.java)
 
   override fun onCreate() {
     super.onCreate()
