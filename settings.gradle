@@ -5,7 +5,9 @@ include ':dagger-reflect-android-app'
 include ':autofactory-presenter'
 include ':autofactory'
 
-include ':assistedinject'
+//include ':assistedinject'
 
 include ':hilt'
 include ':hilt-migration-android'
+
+include ':assisted'
