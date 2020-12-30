@@ -41,7 +41,7 @@ const val RXANDROID = "io.reactivex.rxjava2:rxandroid:2.1.0"
 const val GROUPIE = "com.xwray:groupie:2.1.0"
 const val GROUPIE_DATABINDING = "com.xwray:groupie-databinding:2.1.0"
 
-private const val VDAGGER = "2.29.1"
+private const val VDAGGER = "2.30.1"
 const val DAGGER = "com.google.dagger:dagger:$VDAGGER"
 const val DAGGER_COMPILER = "com.google.dagger:dagger-compiler:$VDAGGER"
 const val DAGGER_ANDROID = "com.google.dagger:dagger-android:$VDAGGER"
