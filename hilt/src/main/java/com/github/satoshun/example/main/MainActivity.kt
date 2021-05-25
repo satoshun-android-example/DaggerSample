@@ -8,6 +8,7 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.get
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.lifecycleScope
+import com.example.lib1.Lib1
 import com.github.satoshun.example.FeatureCounter
 import com.github.satoshun.example.R
 import com.github.satoshun.example.SimpleGreeter
@@ -56,6 +57,8 @@ class MainActivity : AppCompatActivity(R.layout.main_act) {
   //  @Inject lateinit var viewModelScopeTest: ViewModelScopeTest
   @Inject lateinit var activityRetainedScopeTest: ActivityRetainedScopeTest
   @Inject lateinit var activityScopeTest: ActivityScopeTest
+
+  @Inject lateinit var a: Lib1
 
   private val testViewModel by viewModels<TestViewModel>()
 

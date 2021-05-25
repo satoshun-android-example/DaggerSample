@@ -32,6 +32,11 @@ android {
     sourceCompatibility JavaVersion.VERSION_1_8
     targetCompatibility JavaVersion.VERSION_1_8
   }
+
+  lintOptions {
+    checkReleaseBuilds = false
+  }
+
   packagingOptions {
     exclude "META-INF/*"
   }
@@ -42,9 +47,23 @@ android {
       proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
     }
   }
+
+  kapt {
+    arguments {
+      arg("dagger.experimentalDaggerErrorMessages", "enabled")
+      arg("dagger.validateTransitiveComponentDependencies", "DISABLED")
+    }
+    javacOptions {
+//      option("-Adagger.validateTransitiveComponentDependencies", "DISABLED")
+      option("-Adagger.validateTransitiveComponentDependencies=DISABLED")
+    }
+  }
 }
 
 dependencies {
+  implementation project(':lib1')
+//  implementation project(':lib2')
+
   implementation KOTLIN
 
   implementation ACTIVITYX
@@ -60,8 +79,18 @@ dependencies {
 
   implementation OKHTTP
 
-  implementation DAGGER
-  kapt DAGGER_COMPILER
   implementation DAGGER_HILT
   kapt DAGGER_HILT_COMPILER
 }
+
+//hilt {
+//  enableExperimentalClasspathAggregation = true
+//}
+
+//kapt {
+//  javacOptions {
+//    option("-Xmaxerrs", 500)
+//    option("-Adagger.validateTransitiveComponentDependencies", "DISABLED")
+//    option("-Adagger.validateTransitiveComponentDependencies=DISABLED")
+//  }
+//}

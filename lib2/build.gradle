@@ -1,0 +1,44 @@
+import static dependencies.DependenciesKt.*
+
+plugins {
+  id 'com.android.library'
+  id 'kotlin-android'
+}
+
+apply plugin: 'dagger.hilt.android.plugin'
+apply plugin: 'kotlin-kapt'
+
+android {
+  compileSdkVersion COMPILE_SDK
+
+  defaultConfig {
+    minSdkVersion MIN_SDK
+    targetSdkVersion TARGET_SDK
+    versionCode 1
+    versionName "1.0"
+
+    consumerProguardFiles "consumer-rules.pro"
+  }
+
+  buildTypes {
+    release {
+      minifyEnabled false
+      proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+    }
+  }
+  compileOptions {
+    sourceCompatibility JavaVersion.VERSION_1_8
+    targetCompatibility JavaVersion.VERSION_1_8
+  }
+
+  kotlinOptions {
+    jvmTarget = '1.8'
+  }
+}
+
+dependencies {
+  implementation KOTLIN
+
+  implementation DAGGER_HILT
+  kapt DAGGER_HILT_COMPILER
+}

@@ -32,6 +32,7 @@ allprojects {
     extensions.findByName("kapt")?.arguments {
       arg("dagger.experimentalDaggerErrorMessages", "enabled")
       arg("dagger.hilt.disableModulesHaveInstallInCheck", "true")
+//      arg("dagger.validateTransitiveComponentDependencies", "DISABLED")
     }
   }
 }
