@@ -1,20 +1,15 @@
 package com.github.satoshun.example.customcomponent
 
-import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import com.github.satoshun.example.R
 import dagger.BindsInstance
 import dagger.hilt.DefineComponent
-import dagger.hilt.android.components.ApplicationComponent
+import dagger.hilt.components.SingletonComponent
 import javax.inject.Inject
 
-class CustomComponentActivity : AppCompatActivity(R.layout.custom_component_act) {
-  override fun onCreate(savedInstanceState: Bundle?) {
-    super.onCreate(savedInstanceState)
-  }
-}
+class CustomComponentActivity : AppCompatActivity(R.layout.custom_component_act)
 
-@DefineComponent(parent = ApplicationComponent::class)
+@DefineComponent(parent = SingletonComponent::class)
 interface CustomComponentActivityComponent
 
 @DefineComponent.Builder
