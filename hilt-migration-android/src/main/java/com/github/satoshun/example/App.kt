@@ -15,7 +15,6 @@ import dagger.hilt.EntryPoint
 import dagger.hilt.EntryPoints
 import dagger.hilt.InstallIn
 import dagger.hilt.android.HiltAndroidApp
-import dagger.hilt.android.components.ApplicationComponent
 import dagger.hilt.android.qualifiers.ApplicationContext
 import dagger.hilt.android.scopes.ActivityScoped
 import dagger.hilt.components.SingletonComponent
@@ -42,7 +41,7 @@ class App : DaggerApplication() {
   }
 }
 
-@InstallIn(ApplicationComponent::class)
+@InstallIn(SingletonComponent::class)
 @Module(
   includes = [
     AndroidInjectionModule::class,
@@ -63,7 +62,7 @@ interface ActivityModule {
   fun contributeMainActivity(): MainActivity
 }
 
-@DefineComponent(parent = ApplicationComponent::class)
+@DefineComponent(parent = SingletonComponent::class)
 interface AppComponent {
   @DefineComponent.Builder
   interface Factory {

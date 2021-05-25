@@ -7,7 +7,7 @@ const val TARGET_SDK = 30
 private const val VKOTLIN = "1.4.21"
 const val KTLINT = "0.24.0"
 
-const val ANDROID_PLUGIN = "com.android.tools.build:gradle:4.1.2"
+const val ANDROID_PLUGIN = "com.android.tools.build:gradle:4.2.1"
 const val KOTLIN_PLUGIN = "org.jetbrains.kotlin:kotlin-gradle-plugin:$VKOTLIN"
 const val VERSIONS_PLUGIN = "com.github.ben-manes:gradle-versions-plugin:0.20.0"
 
@@ -34,17 +34,16 @@ const val VIEWMODEL_SAVEDSTATE = "androidx.lifecycle:lifecycle-viewmodel-savedst
 const val LIVEDATA = "androidx.lifecycle:lifecycle-livedata-ktx:2.2.0"
 const val LIFECYCLE = "androidx.lifecycle:lifecycle-runtime-ktx:2.2.0"
 
-private const val VDAGGER = "2.31.2"
+private const val VDAGGER = "2.35.1"
 const val DAGGER = "com.google.dagger:dagger:$VDAGGER"
 const val DAGGER_COMPILER = "com.google.dagger:dagger-compiler:$VDAGGER"
 const val DAGGER_ANDROID = "com.google.dagger:dagger-android:$VDAGGER"
 const val DAGGER_ANDROID_PROCESSOR = "com.google.dagger:dagger-android-processor:$VDAGGER"
 const val DAGGER_ANDROID_SUPPORT = "com.google.dagger:dagger-android-support:$VDAGGER"
 
-private const val VDAGGER_HILT = "2.31.2-alpha"
-const val DAGGER_HILT_PLUGIN = "com.google.dagger:hilt-android-gradle-plugin:$VDAGGER_HILT"
-const val DAGGER_HILT = "com.google.dagger:hilt-android:$VDAGGER_HILT"
-const val DAGGER_HILT_COMPILER = "com.google.dagger:hilt-android-compiler:$VDAGGER_HILT"
+const val DAGGER_HILT_PLUGIN = "com.google.dagger:hilt-android-gradle-plugin:$VDAGGER"
+const val DAGGER_HILT = "com.google.dagger:hilt-android:$VDAGGER"
+const val DAGGER_HILT_COMPILER = "com.google.dagger:hilt-android-compiler:$VDAGGER"
 
 private const val VDAGGER_HILT_ANDROIDX = "1.0.0-alpha02"
 const val DAGGER_HILT_ANDROIDX_COMPILER = "androidx.hilt:hilt-compiler:$VDAGGER_HILT_ANDROIDX"
