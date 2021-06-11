@@ -34,7 +34,7 @@ const val VIEWMODEL_SAVEDSTATE = "androidx.lifecycle:lifecycle-viewmodel-savedst
 const val LIVEDATA = "androidx.lifecycle:lifecycle-livedata-ktx:2.2.0"
 const val LIFECYCLE = "androidx.lifecycle:lifecycle-runtime-ktx:2.2.0"
 
-private const val VDAGGER = "2.35.1"
+private const val VDAGGER = "2.37"
 const val DAGGER = "com.google.dagger:dagger:$VDAGGER"
 const val DAGGER_COMPILER = "com.google.dagger:dagger-compiler:$VDAGGER"
 const val DAGGER_ANDROID = "com.google.dagger:dagger-android:$VDAGGER"
